@@ -1,0 +1,27 @@
+<a style="margin-bottom: 5px;" class="btn btn-default" href="#!/cars">Go Back</a>
+<div class="panel panel-default" ng-init="getCar()">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{car.name}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img ng-src="{{car.image_url}}">
+            </div>
+            <div class="col-md-8">
+                <p>{{car.description}}</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Price: {{car.price | currency}}</li>
+                    <li class="list-group-item">Country: {{car.country}}</li>
+                    <li class="list-group-item">Engine capacity: {{car.engine}} cubic centimetre</li>
+                    <li class="list-group-item">Max Speed: {{car.max_speed}} kilometers per hour</li>
+                </ul>
+                <a href="{{car.website}}" target="_blank" class="btn btn-primary">Visit Website</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pull-right">
+    <a href="#!/cars/edit/{{car._id}}" class="btn btn-warning">Edit</a>
+    <a href="#" ng-click="deleteCar(car._id)" class="btn btn-danger">Delete</a>
+</div>
